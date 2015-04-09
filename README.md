@@ -8,21 +8,31 @@
 ### API
 
 ``init(url : NSURL , cachePolicy : NSURLRequestCachePolicy , timeoutInterval : NSTimeInterval , method:String = "POST")``
+
 实例一个Form并且设置其url，缓存策略，超时时间以及请求方法，请求方法默认为POST
 
+
 ``init(url : NSURL , method:String = "POST")``
+
 实例一个``Form``并且设置其``url``，请求方法，请求方法默认为``POST``
-注：
-此方法``cachePolicy`` 为 ``NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData``，并且 ``timeoutInterval`` 为 ``2.0``
+
+注：此方法``cachePolicy`` 为 ``NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData``，并且 ``timeoutInterval`` 为 ``2.0``
+
 
 ``append(key : String , value : String)``
+
 添加表单字段
 
+
 ``appendFile(key : String , filePath : NSURL!)``
+
 添加文件
 
+
 ``send(callback:((response:NSURLResponse! , dataObject:NSData!, error:NSError!) -> Void))``
+
 发送请求，回调函数的参数分别为``response``,返回数据以及错误
+
 
 ### 示例
 ```
