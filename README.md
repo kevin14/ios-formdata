@@ -1,12 +1,14 @@
 # ios-formdata
 
-### 功能
-在iOS中提供了Formdata的API
-使用swift语言
+# 功能
+在``iOS``中提供了``Formdata``的``API``
+
+使用``swift``语言
+
 提供多文件上传功能
 
-### API
-
+# API
+### init
 ``init(url : NSURL , cachePolicy : NSURLRequestCachePolicy , timeoutInterval : NSTimeInterval , method:String = "POST")``
 
 实例一个Form并且设置其url，缓存策略，超时时间以及请求方法，请求方法默认为POST
@@ -18,17 +20,17 @@
 
 注：此方法``cachePolicy`` 为 ``NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData``，并且 ``timeoutInterval`` 为 ``2.0``
 
-
+### append
 ``append(key : String , value : String)``
 
 添加表单字段
 
-
+### appendFile
 ``appendFile(key : String , filePath : NSURL!)``
 
 添加文件
 
-
+### send
 ``send(callback:((response:NSURLResponse! , dataObject:NSData!, error:NSError!) -> Void))``
 
 发送请求，回调函数的参数分别为``response``,返回数据以及错误
