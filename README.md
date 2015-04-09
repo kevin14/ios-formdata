@@ -35,7 +35,7 @@
 
 
 ### 示例
-```
+```swift
 let url:NSURL? = NSURL(string: "http://localhost:3000/test")
 
 var formdata = FormData(url: url!)
