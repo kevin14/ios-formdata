@@ -30,6 +30,11 @@
 
 添加文件
 
+### appendData
+``appendData(#key:String,data:NSData!,filename:String,mimetype:String)``
+
+直接添加一个数据到表单中，这个数据是二进制的``NSData``
+
 ### send
 ``send(callback:((response:NSURLResponse! , dataObject:NSData!, error:NSError!) -> Void))``
 
