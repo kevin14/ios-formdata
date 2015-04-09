@@ -55,12 +55,16 @@ class FormData{
         if let data = NSData(contentsOfFile: filePath.path!){
             let filename = filePath.lastPathComponent!
             let mimetype = mimeTypeForPath(filePath.path!)
-            body.appendString("--\(boundaryConstant)\r\n")
-            body.appendString("Content-Disposition: form-data; name=\"\(key)\";filename=\"\(filename)\"\r\n")
-            body.appendString("Content-Type: \(mimetype)\r\n\r\n")
-            body.appendData(data)
-            body.appendString("\r\n")
+            appendData(key: key, data: data, filename: filename, mimetype: mimetype)
         }
+    }
+    
+    func appendData(#key:String,data:NSData!,filename:String,mimetype:String){
+        body.appendString("--\(boundaryConstant)\r\n")
+        body.appendString("Content-Disposition: form-data; name=\"\(key)\";filename=\"\(filename)\"\r\n")
+        body.appendString("Content-Type: \(mimetype)\r\n\r\n")
+        body.appendData(data)
+        body.appendString("\r\n")
     }
     
     private func mimeTypeForPath(path: String) -> String {
